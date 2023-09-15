@@ -20,6 +20,13 @@ data_3 = {
 
 # Типичный обход графа в глубину
 def my_code(data: dict, node: int, visited=None):
+    """
+    Функция, печатает достижимые вершины графа, начиная с заданной
+    :param data: словарь вершин графа
+    :param node: заданная нода
+    :param visited: множество посещенных вершин
+    :return: None
+    """
     if visited is None:
         visited = set()
     visited.add(node)
@@ -27,8 +34,3 @@ def my_code(data: dict, node: int, visited=None):
     for next in set(data.get(node, [])) - visited:
         if next not in visited:
             my_code(data, next, visited)
-
-
-my_code(data, 1)
-my_code(data_2, 1)
-my_code(data_3, 1)

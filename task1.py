@@ -49,8 +49,13 @@ data_5 = {
 
 
 # Предположил что списки/кортежи/множества тоже могут быть значениями.
-# Очень похоже на преобразование json -> yml
 def my_code(data: dict, level=0):
+    """
+    Функция, выводит на экран словарь по уровням вложенности.
+    :param data: словарь
+    :param level: текущий уровень вложенности. По-умолчанию - 0
+    :return: None
+    """
     for k, v in data.items():
         tabulation = "\t" * level
         print(f"{tabulation}{k}:")
